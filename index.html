@@ -1,5 +1,146 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Your Name | Software Engineer</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+      background: #f9fafb;
+      color: #111827;
+    }
+    header {
+      background: #1f2937;
+      color: #f9fafb;
+      padding: 2rem;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin: 0.5rem 0 0;
+    }
+    nav {
+      background: #111827;
+      padding: 0.5rem;
+      text-align: center;
+    }
+    nav a {
+      color: #f9fafb;
+      margin: 0 1rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    section {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+    h2 {
+      border-bottom: 2px solid #e5e7eb;
+      padding-bottom: 0.5rem;
+      margin-bottom: 1rem;
+      color: #1f2937;
+    }
+    .card {
+      background: #fff;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 8px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+    }
+    footer {
+      text-align: center;
+      padding: 1rem;
+      background: #1f2937;
+      color: #f9fafb;
+      margin-top: 2rem;
+    }
+    a.button {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: 0.5rem 1rem;
+      background: #2563eb;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+    }
+  </style>
+</head>
 <body>
-<h1> Zulker Nayeen </h1>
+  <header>
+    <h1>Your Name</h1>
+    <p>Backend Software Engineer | Spring Boot • Microservices • ML Enthusiast</p>
+  </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p>
+      I’m a Software Engineer (Backend) with 2.5 years of experience working on
+      enterprise-scale systems. Skilled in Spring Boot, microservices, SQL optimization,
+      and distributed logging, I’ve contributed to government and private sector projects.
+      I also explore machine learning and full-stack development in personal projects.
+    </p>
+  </section>
+
+  <section id="experience">
+    <h2>Experience</h2>
+    <div class="card">
+      <h3>Software Engineer – Backend</h3>
+      <p><strong>e-PMIS (Govt. of Bangladesh, World Bank Funded)</strong></p>
+      <ul>
+        <li>Designed & optimized REST APIs and MS SQL queries (reduced calls &lt;10 per API).</li>
+        <li>Built Spring Boot microservices with RabbitMQ, ELK, and MongoDB.</li>
+        <li>Delivered new features and bug fixes in Agile teams.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Backend Engineer (Contract)</h3>
+      <p><strong>Dohatec New Media</strong></p>
+      <ul>
+        <li>Developed a Flask microservice chatbot using Hugging Face BERT.</li>
+        <li>Implemented vector similarity search for document-based Q&amp;A.</li>
+        <li>Integrated service into a larger microservices ecosystem.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="card">
+      <h3>Lost &amp; Found Web App</h3>
+      <p>Full-stack project (React + Spring Boot + Neon PostgreSQL). Deployed with GitHub Actions CI/CD to Render &amp; Netlify.</p>
+      <a href="#" class="button">View on GitHub</a>
+    </div>
+    <div class="card">
+      <h3>Machine Learning Experiments</h3>
+      <p>Implemented CNNs and ML models on Kaggle playground datasets, focusing on model training and evaluation.</p>
+    </div>
+  </section>
+
+  <section id="contact">
+    <h2>Contact</h2>
+    <p>Email: <a href="mailto:your.email@example.com">your.email@example.com</a></p>
+    <p>GitHub: <a href="https://github.com/yourusername">github.com/yourusername</a></p>
+    <p>LinkedIn: <a href="#">linkedin.com/in/yourprofile</a></p>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Your Name. All rights reserved.</p>
+  </footer>
 </body>
 </html>
