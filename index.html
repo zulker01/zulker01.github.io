@@ -1,203 +1,661 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="dark">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Zulker Nayen | Software Engineer</title>
-  <!-- Bootstrap CSS -->
-  <link
-    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css"
-    rel="stylesheet"
-  />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zulker Nayeen | Backend Software Engineer II</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        dark: {
+                            950: '#030712',
+                            900: '#0b0f19',
+                            850: '#111827',
+                            800: '#1f2937',
+                            700: '#374151'
+                        },
+                        brand: {
+                            500: '#6366f1',
+                            600: '#4f46e5',
+                            400: '#818cf8',
+                            accent: '#38bdf8'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                        mono: ['JetBrains Mono', 'monospace']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        body { font-family: 'Inter', sans-serif; }
+        code, pre { font-family: 'JetBrains Mono', monospace; }
+        .glass-card {
+            background: rgba(17, 24, 39, 0.75);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .glow-effect {
+            box-shadow: 0 0 50px -10px rgba(99, 102, 241, 0.2);
+        }
+        .custom-scrollbar::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-track {
+            background: #0b0f19;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb {
+            background: #374151;
+            border-radius: 3px;
+        }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover {
+            background: #4f46e5;
+        }
+    </style>
 </head>
-<body>
-  <!-- Header -->
-  <header class="bg-dark text-white text-center py-5">
-    <div class="container">
-      <h1 class="display-4">Zulker Nayen</h1>
-      <p class="lead mb-0">
-        Backend Software Engineer | Spring Boot • Microservices • ML Enthusiast
-      </p>
-    </div>
-  </header>
+<body class="bg-dark-950 text-slate-100 min-h-screen selection:bg-brand-500 selection:text-white antialiased">
 
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary sticky-top">
-    <div class="container">
-      <a class="navbar-brand" href="#">Portfolio</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-bs-toggle="collapse"
-        data-bs-target="#navbarNav"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div id="navbarNav" class="collapse navbar-collapse">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#experience">Experience</a></li>
-          <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
-          <li class="nav-item"><a class="nav-link" href="#education">Education</a></li>
-          <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#activities">Activities</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
-      </div>
+    <!-- Toast Notification Box -->
+    <div id="toast" class="fixed bottom-5 right-5 z-50 transform translate-y-20 opacity-0 transition-all duration-300 bg-emerald-600 text-white px-5 py-3 rounded-xl shadow-2xl flex items-center gap-3 border border-emerald-500">
+        <i class="fa-solid fa-circle-check text-lg"></i>
+        <span id="toast-message" class="font-medium text-sm">Copied to clipboard successfully!</span>
     </div>
-  </nav>
 
-  <!-- About -->
-  <section id="about" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">About Me</h2>
-      <p>
-        I’m a Software Engineer (Backend) with 2.5 years of experience working
-        on enterprise-scale systems. Skilled in Spring Boot, microservices, SQL
-        optimization, and distributed logging, I’ve contributed to government
-        and private sector projects. I also explore machine learning and
-        full-stack development in personal projects.
-      </p>
-    </div>
-  </section>
-
-  <!-- Experience -->
-  <section id="experience" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Experience</h2>
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h3 class="h5">Software Engineer – Backend</h3>
-          <p><strong>e-PMIS (Govt. of Bangladesh, World Bank Funded)</strong></p>
-          <ul>
-            <li>Designed & optimized REST APIs and MS SQL queries (reduced calls &lt;10 per API).</li>
-            <li>Built Spring Boot microservices with RabbitMQ, ELK, and MongoDB.</li>
-            <li>Delivered new features and bug fixes in Agile teams.</li>
-          </ul>
-        </div>
-      </div>
-      <div class="card mb-3 shadow-sm">
-        <div class="card-body">
-          <h3 class="h5">Backend Engineer (Contract)</h3>
-          <p><strong>Dohatec New Media</strong></p>
-          <ul>
-            <li>Developed a Flask microservice chatbot using Hugging Face BERT.</li>
-            <li>Implemented vector similarity search for document-based Q&amp;A.</li>
-            <li>Integrated service into a larger microservices ecosystem.</li>
-          </ul>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- Projects -->
-  <section id="projects" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Projects</h2>
-      <div class="row">
-        <div class="col-md-6 mb-3">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h3 class="h5">Lost &amp; Found Web App</h3>
-              <p>
-                Full-stack project (React + Spring Boot + Neon PostgreSQL).
-                Deployed with GitHub Actions CI/CD to Render &amp; Netlify.
-                URL : <a href="https://teal-marshmallow-82b2aa.netlify.app" class="btn btn-outline-primary btn-sm" target="_blank">Live Project Link</a>
-              </p>
-              <a href="https://github.com/zulker01/peyechiBack" class="btn btn-primary" target="_blank">View on GitHub (backend)</a>
-              <a href="https://github.com/zulker01/peyechiFront" class="btn btn-primary" target="_blank">View on GitHub (Frontend)</a>
+    <!-- Navigation Header -->
+    <header class="sticky top-0 z-40 bg-dark-950/80 backdrop-blur-md border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-brand-600 to-brand-accent flex items-center justify-center text-white font-bold text-lg shadow-lg shadow-brand-500/20">
+                    ZN
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg text-white leading-tight">Zulker Nayeen</h1>
+                    <p class="text-xs text-brand-400 font-mono">Backend Software Engineer II</p>
+                </div>
             </div>
-          </div>
-        </div>
-        <div class="col-md-6 mb-3">
-          <div class="card shadow-sm h-100">
-            <div class="card-body">
-              <h3 class="h5">Machine Learning Experiments</h3>
-              <p>
-                Implemented CNNs and ML models on Kaggle playground datasets,
-                focusing on model training and evaluation.
-              </p>
+
+            <!-- Desktop Nav Links -->
+            <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+                <a href="#about" class="hover:text-white transition">About</a>
+                <a href="#star-projects" class="hover:text-white transition">Star Projects</a>
+                <a href="#experience" class="hover:text-white transition">Experience</a>
+                <a href="#all-projects" class="hover:text-white transition">All Projects</a>
+                <a href="#skills" class="hover:text-white transition">Skills</a>
+                <a href="#cv-links" class="text-brand-400 hover:text-brand-300 flex items-center gap-1.5 transition">
+                    <i class="fa-solid fa-link-slash"></i> CV Quick Links
+                </a>
+            </nav>
+
+            <!-- Quick Contact Actions -->
+            <div class="flex items-center gap-3">
+                <a href="mailto:zulker729@gmail.com" class="hidden sm:inline-flex items-center gap-2 px-4 py-2 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-xs font-medium text-slate-200 transition">
+                    <i class="fa-solid fa-envelope text-brand-400"></i> zulker729@gmail.com
+                </a>
+                <a href="https://github.com/zulker01" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition">
+                    <i class="fa-brands fa-github text-lg"></i>
+                </a>
+                <a href="https://linkedin.com/in/zulker-nain" target="_blank" class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 flex items-center justify-center text-slate-300 hover:text-white transition">
+                    <i class="fa-brands fa-linkedin text-lg"></i>
+                </a>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
-<!-- Education -->
-  <section id="education" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Education</h2>
-      <ul class="list-group">
-        <li class="list-group-item">
-          <h5>BSc. in Computer Science & Engineering</h5>
-          <p>University of Dhaka, 2023</p>
-          <p>1st class, 10th in Batch</p>
-        </li>
-        <li class="list-group-item">
-          <h5>HSC in Science</h5>
-          <p>Rajuk Uttara Model College, 2017</p>
-          <p><strong>GPA:</strong> 5.00</p>
-        </li>
-      </ul>
-    </div>
-  </section>
+    </header>
 
-  <!-- Publications -->
-  <section id="publications" class="py-5">
-    <div class="container">
-      <h2 class="mb-4">Publications</h2>
-      <div class="card shadow-sm">
-        <div class="card-body">
-          <h5 class="card-title">
-           <a href="https://scholar.google.com/citations?view_op=view_citation&hl=en&user=45VRkGUAAAAJ&citation_for_view=45VRkGUAAAAJ:u5HHmVD_uO8C"> An Efficient Approach for Mining Temporal Fuzzy High-Utility Itemsets</a>
-          </h5>
-          <p class="mb-1">
-            <strong>Authors:</strong> Sadnan Kibria Kawshik, Zulker Nayeen,
-            Chowdhury Farhan Ahmed, <em>et al.</em>
-          </p>
-          <p>
-            Accepted at the 10th International Conference on Fuzzy Systems and Data Mining (FSDM 2024)
-          </p>
+    <!-- Hero Section -->
+    <section class="relative overflow-hidden pt-16 pb-24 lg:pt-24 lg:pb-32 border-b border-slate-800/60">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-brand-600/10 via-dark-950 to-dark-950 -z-10"></div>
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="max-w-3xl">
+                <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-brand-500/10 border border-brand-500/20 text-brand-400 text-xs font-mono mb-6">
+                    <span class="w-2 h-2 rounded-full bg-brand-400 animate-pulse"></span>
+                    Kona Software Lab • Dhaka, Bangladesh
+                </div>
+                <h1 class="text-4xl sm:text-6xl font-extrabold tracking-tight text-white mb-6">
+                    Designing & Scaling <span class="bg-gradient-to-r from-brand-400 via-indigo-300 to-brand-accent bg-clip-text text-transparent">High-Throughput Systems</span>
+                </h1>
+                <p class="text-lg sm:text-xl text-slate-400 mb-8 leading-relaxed">
+                    Backend Software Engineer with <strong class="text-slate-200">3.5+ years</strong> of expertise in distributed streaming architectures, payment gateway integrations, zero-knowledge cryptographic security, and serverless edge applications.
+                </p>
+                <div class="flex flex-wrap gap-4">
+                    <a href="#star-projects" class="px-6 py-3.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white font-semibold text-sm transition shadow-lg shadow-brand-600/30 flex items-center gap-2">
+                        <i class="fa-solid fa-rocket"></i> Explore Star Projects
+                    </a>
+                    <button onclick="copyToClipboard('zulker729@gmail.com', 'Email copied!')" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-semibold text-sm transition flex items-center gap-2">
+                        <i class="fa-regular fa-copy text-brand-400"></i> Copy Email
+                    </button>
+                    <button onclick="copyToClipboard('+8801521109791', 'Phone number copied!')" class="px-6 py-3.5 rounded-xl bg-slate-900 border border-slate-800 hover:border-slate-700 text-slate-200 font-semibold text-sm transition flex items-center gap-2">
+                        <i class="fa-solid fa-phone text-brand-400"></i> Copy Phone
+                    </button>
+                </div>
+            </div>
+
+            <!-- Quick Stats Bar -->
+            <div class="mt-16 grid grid-cols-2 md:grid-cols-4 gap-4">
+                <div class="glass-card p-5 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-mono uppercase">Experience</p>
+                    <p class="text-2xl font-bold text-white mt-1">3.5+ Years</p>
+                    <p class="text-xs text-brand-400 mt-1">Enterprise Backends</p>
+                </div>
+                <div class="glass-card p-5 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-mono uppercase">Education</p>
+                    <p class="text-2xl font-bold text-white mt-1">B.Sc. in CSE</p>
+                    <p class="text-xs text-brand-400 mt-1">University of Dhaka (Ranked 10th)</p>
+                </div>
+                <div class="glass-card p-5 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-mono uppercase">Publication</p>
+                    <p class="text-2xl font-bold text-white mt-1">FSDM 2024</p>
+                    <p class="text-xs text-brand-400 mt-1">Temporal Fuzzy Itemsets</p>
+                </div>
+                <div class="glass-card p-5 rounded-2xl">
+                    <p class="text-xs text-slate-400 font-mono uppercase">Core Stack</p>
+                    <p class="text-2xl font-bold text-white mt-1">Spring • Python</p>
+                    <p class="text-xs text-brand-400 mt-1">Kafka, Flink, SQLite, Redis</p>
+                </div>
+            </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Activities -->
-  <section id="activities" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Extra Curricular Activities</h2>
-      <ul class="list-group">
-        <li class="list-group-item">
-          Team Coordinator, Dhaka University Research Society – ICT, Engineering & Technology Team
-        </li>
-        <li class="list-group-item">
-          Volunteer, International Conference on Innovation in Engineering and Technology (ICIET) 2019
-        </li>
-      </ul>
-    </div>
-  </section>
-  <!-- Contact -->
-  <section id="contact" class="bg-light py-5">
-    <div class="container">
-      <h2 class="mb-4">Contact</h2>
-      <p>Email: <a href="mailto:zulker729@example.com">zulker729@example.com</a></p>
-      <p>GitHub: <a href="https://github.com/zulker01" target="_blank">github.com/zulker01</a></p>
-      <p>LinkedIn: <a href="https://www.linkedin.com/in/zulker-nayeen-0a1476172" target="_blank">zulker</a></p>
-      <p>
-  <a href="https://scholar.google.com/citations?user=45VRkGUAAAAJ" target="_blank" class="btn btn-outline-primary btn-sm">
-    View Google Scholar
-  </a>
-</p>
-    </div>
-  </section>
+    <!-- Star Projects Section -->
+    <section id="star-projects" class="py-20 bg-dark-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Featured Engineering Masterpieces</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Star Projects & Deep Architecture</h2>
+                <p class="text-slate-400 mt-2 text-sm">Advanced full-stack systems engineered with zero-knowledge encryption, high-scale search indexing, and resilient edge workers.</p>
+            </div>
 
-  <!-- Footer -->
-  <footer class="bg-dark text-white text-center py-3">
-    <p class="mb-0">&copy; 2025 . All rights reserved.</p>
-  </footer>
+            <div class="space-y-16">
+                <!-- Project 1: Drive Hub -->
+                <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800/80 glow-effect">
+                    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-8">
+                        <div>
+                            <div class="flex items-center gap-3 flex-wrap mb-3">
+                                <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">Active Flagship System</span>
+                                <span class="px-3 py-1 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-mono border border-brand-500/20">Zero-Knowledge Vault</span>
+                                <span class="px-3 py-1 rounded-lg bg-purple-500/10 text-purple-400 text-xs font-mono border border-purple-500/20">40,000+ Files Indexed</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">🛡️ Drive Hub — High-Performance Multi-Drive Aggregator</h3>
+                            <p class="text-slate-300 mt-2 text-base leading-relaxed">
+                                Self-hosted cloud filesystem aggregator and real-time search engine unifying 30+ Google Drive accounts into a centralized, sub-millisecond searchable workspace. Built with an air-gapped security model, zero-knowledge token encryption, and automated public-mirror sanitization pipeline.
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                            <button onclick="copyToClipboard('https://github.com/zulker01/drive-hub', 'Drive Hub link copied!')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-medium transition flex items-center justify-center gap-2 border border-slate-700">
+                                <i class="fa-solid fa-copy text-brand-400"></i> Copy CV Project Link
+                            </button>
+                            <a href="https://github.com/zulker01" target="_blank" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-mono font-medium transition flex items-center justify-center gap-2 shadow-md">
+                                <i class="fa-brands fa-github"></i> View GitHub Repo
+                            </a>
+                        </div>
+                    </div>
 
-  <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+                    <!-- Tech Stack Badge Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 bg-dark-950/60 p-4 rounded-2xl border border-slate-800/50">
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">CORE API</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">Python 3.10+, FastAPI, Flask</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">STORAGE ENGINE</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">SQLite3 (WAL, FTS5)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">CRYPTOGRAPHY</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">PBKDF2 + Fernet AES-128</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">FRONTEND</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">Jinja2, Vanilla CSS/JS</p>
+                        </div>
+                    </div>
+
+                    <!-- Interactive Architecture Tabs -->
+                    <div class="border border-slate-800 rounded-2xl overflow-hidden bg-dark-950/80">
+                        <div class="flex flex-wrap border-b border-slate-800 bg-slate-900/60 text-xs font-mono">
+                            <button onclick="switchTab('drive', 'sec')" id="btn-drive-sec" class="px-5 py-3 font-semibold text-brand-400 border-b-2 border-brand-500 bg-dark-950 transition">🔐 Cryptographic Security</button>
+                            <button onclick="switchTab('drive', 'sync')" id="btn-drive-sync" class="px-5 py-3 font-medium text-slate-400 hover:text-slate-200 transition">⚡ Sync & Search Engine</button>
+                            <button onclick="switchTab('drive', 'air')" id="btn-drive-air" class="px-5 py-3 font-medium text-slate-400 hover:text-slate-200 transition">🌐 Air-Gapped Mirror</button>
+                        </div>
+
+                        <!-- Tab 1: Security -->
+                        <div id="tab-drive-sec" class="p-6 space-y-4 text-sm text-slate-300">
+                            <h4 class="font-bold text-white text-base">Two-Tier Zero-Knowledge Encryption Architecture</h4>
+                            <p>Designed to ensure that even a full compromise of the database at rest leaks zero Google credentials.</p>
+                            <ul class="space-y-3 list-disc pl-5 text-slate-300">
+                                <li class="leading-relaxed"><strong class="text-white">Key Derivation & Token Envelope:</strong> The encryption key is never stored. Dynamically derived by combining a local server salt, a high-entropy <code class="text-brand-400 bg-slate-900 px-1.5 py-0.5 rounded">SECRET_KEY</code>, and a user-provided Master Password.</li>
+                                <li class="leading-relaxed"><strong class="text-white">PBKDF2-HMAC-SHA256:</strong> Key stretching is executed with 100,000 rounds and a 16-byte cryptographically secure random salt (<code class="text-brand-400 bg-slate-900 px-1.5 py-0.5 rounded">secrets.token_bytes(16)</code>).</li>
+                                <li class="leading-relaxed"><strong class="text-white">Authenticated Encryption (Fernet):</strong> All OAuth refresh tokens are encrypted at rest using AES-128-CBC paired with HMAC-SHA256 signatures to prevent ciphertext tampering.</li>
+                                <li class="leading-relaxed"><strong class="text-white">Cryptographic Canary:</strong> Verifies Master Password accuracy without storing passwords or password hashes via <code class="text-brand-400 bg-slate-900 px-1.5 py-0.5 rounded">Canary_encrypted = E_CipherKey("DRIVE_HUB_VAULT_CANARY_V1")</code>. On logout, all derived ciphers in memory are destroyed immediately.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab 2: Sync & Search -->
+                        <div id="tab-drive-sync" class="p-6 space-y-4 text-sm text-slate-300 hidden">
+                            <h4 class="font-bold text-white text-base">High-Scale Sync Engine & Sub-Millisecond Indexing</h4>
+                            <ul class="space-y-3 list-disc pl-5 text-slate-300">
+                                <li class="leading-relaxed"><strong class="text-white">Incremental Changes Pipeline (Delta Sync):</strong> Event-driven delta sync using Google Drive Changes API. Cold boot seeds baseline pagination; warm incremental sync fetches only changes via <code class="text-brand-400 bg-slate-900 px-1.5 py-0.5 rounded">changes.list(pageToken)</code>. Gracefully catches HTTP 410 Gone token expiration and falls back to incremental rescan.</li>
+                                <li class="leading-relaxed"><strong class="text-white">SQLite FTS5 + WAL Mode:</strong> Write-Ahead Logging enables concurrent, non-blocking reads during high-throughput background sync write batches. FTS5 virtual table tokenizes file names, paths, and MIME categories for instant prefix searches across 40,000+ files in under 2 milliseconds.</li>
+                            </ul>
+                        </div>
+
+                        <!-- Tab 3: Air-Gapped Mirror -->
+                        <div id="tab-drive-air" class="p-6 space-y-4 text-sm text-slate-300 hidden">
+                            <h4 class="font-bold text-white text-base">Zero-Leakage Public Sanitization Pipeline</h4>
+                            <p>Allows public or remote browsing without exposing internal networks or credentials:</p>
+                            <div class="grid sm:grid-cols-2 gap-4 mt-4">
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <p class="font-bold text-white text-xs mb-2 uppercase text-emerald-400">Master Local Instance</p>
+                                    <ul class="space-y-1.5 text-xs text-slate-400">
+                                        <li>• OAuth Client Credentials in local .env</li>
+                                        <li>• Refresh Tokens encrypted in accounts</li>
+                                        <li>• Vault Canary & Salts in app_settings</li>
+                                        <li>• Full Read/Write Access</li>
+                                    </ul>
+                                </div>
+                                <div class="bg-slate-900/80 p-4 rounded-xl border border-slate-800">
+                                    <p class="font-bold text-white text-xs mb-2 uppercase text-brand-400">Public Hosted Mirror</p>
+                                    <ul class="space-y-1.5 text-xs text-slate-400">
+                                        <li>• ❌ OAuth credentials excluded completely</li>
+                                        <li>• ❌ Token column stripped from schema</li>
+                                        <li>• ❌ Vault table purged entirely</li>
+                                        <li>• 🔒 Physical disk VACUUM shredding</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project 2: JotBot -->
+                <div class="glass-card rounded-3xl p-6 sm:p-10 border border-slate-800/80 glow-effect">
+                    <div class="flex flex-col lg:flex-row lg:items-start justify-between gap-6 mb-8">
+                        <div>
+                            <div class="flex items-center gap-3 flex-wrap mb-3">
+                                <span class="px-3 py-1 rounded-lg bg-sky-500/10 text-sky-400 text-xs font-mono border border-sky-500/20">Serverless Edge AI</span>
+                                <span class="px-3 py-1 rounded-lg bg-brand-500/10 text-brand-400 text-xs font-mono border border-brand-500/20">Multi-Tier Gemini LLM Failover</span>
+                                <span class="px-3 py-1 rounded-lg bg-emerald-500/10 text-emerald-400 text-xs font-mono border border-emerald-500/20">Zero-Loss Cloudflare D1</span>
+                            </div>
+                            <h3 class="text-2xl sm:text-3xl font-bold text-white">📝 JotBot — Smart Telegram Note Taker with Notion & Gemini</h3>
+                            <p class="text-slate-300 mt-2 text-base leading-relaxed">
+                                Intelligent, serverless personal note-taking assistant. Send any thought, task, idea, link, or meeting snippet to a private Telegram bot for instant deduplication, AI classification via Google Gemini, and seamless Notion database synchronization.
+                            </p>
+                        </div>
+                        <div class="flex flex-col sm:flex-row lg:flex-col gap-3 shrink-0">
+                            <button onclick="copyToClipboard('https://github.com/zulker01/jotbot', 'JotBot link copied!')" class="px-4 py-2.5 rounded-xl bg-slate-800 hover:bg-slate-700 text-slate-200 text-xs font-mono font-medium transition flex items-center justify-center gap-2 border border-slate-700">
+                                <i class="fa-solid fa-copy text-brand-400"></i> Copy CV Project Link
+                            </button>
+                            <a href="https://github.com/zulker01" target="_blank" class="px-4 py-2.5 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-mono font-medium transition flex items-center justify-center gap-2 shadow-md">
+                                <i class="fa-brands fa-github"></i> View GitHub Repo
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Tech Stack Badge Grid -->
+                    <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mb-8 bg-dark-950/60 p-4 rounded-2xl border border-slate-800/50">
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">RUNTIME</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">Cloudflare Python Workers</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">DATABASE</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">Cloudflare D1 (SQLite)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">AI ENGINE</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">Google Gemini (Multi-Tier)</p>
+                        </div>
+                        <div>
+                            <p class="text-xs text-slate-500 font-mono">INTEGRATION</p>
+                            <p class="text-sm font-semibold text-slate-200 mt-0.5">Notion API + Telegram Bot</p>
+                        </div>
+                    </div>
+
+                    <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-4">
+                        <div class="bg-dark-950/70 p-5 rounded-2xl border border-slate-800/80">
+                            <div class="w-9 h-9 rounded-xl bg-sky-500/10 text-sky-400 flex items-center justify-center mb-3 font-bold">
+                                <i class="fa-solid fa-shield-halved"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-sm mb-1">Zero-Loss Invariant</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">Notes are atomically saved in Cloudflare D1 before external AI calls are dispatched. Even during complete upstream outages, notes are never lost.</p>
+                        </div>
+                        <div class="bg-dark-950/70 p-5 rounded-2xl border border-slate-800/80">
+                            <div class="w-9 h-9 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center mb-3 font-bold">
+                                <i class="fa-solid fa-brain"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-sm mb-1">Multi-Tier LLM Resiliency</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">Uses <code class="text-brand-300">gemini-3.6-flash</code> as primary with automatic sub-second failover to <code class="text-brand-300">gemini-3.5-flash</code> upon 503 capacity spikes.</p>
+                        </div>
+                        <div class="bg-dark-950/70 p-5 rounded-2xl border border-slate-800/80 sm:col-span-2 lg:col-span-1">
+                            <div class="w-9 h-9 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center mb-3 font-bold">
+                                <i class="fa-solid fa-rotate"></i>
+                            </div>
+                            <h4 class="font-bold text-white text-sm mb-1">Automated Cron Retry Engine</h4>
+                            <p class="text-xs text-slate-400 leading-relaxed">Runs every minute via Cloudflare Cron triggers to pick up, retry, and sync any queued notes without manual intervention.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Professional Experience Section -->
+    <section id="experience" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Career History</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Professional Experience</h2>
+                <p class="text-slate-400 mt-2 text-sm">Building scalable enterprise systems, mobile banking backends, and government infrastructure.</p>
+            </div>
+
+            <div class="space-y-8 max-w-4xl mx-auto">
+                <!-- Kona Software Lab -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Software Engineer II</h3>
+                            <p class="text-brand-400 font-mono text-sm">Kona Software Lab</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-brand-500/10 text-brand-400 text-xs font-mono border border-brand-500/20 self-start">Feb 2026 – Present</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300 list-disc pl-5">
+                        <li><strong class="text-white">Mobile Banking Backend:</strong> Built and maintained Spring Boot microservices and REST APIs for NexusPay & MBL Rainbow platforms (Oracle DB, Redis, RabbitMQ), orchestrating P2P & NPSB fund transfers via Core Banking System APIs. Developed Angular internal admin portals.</li>
+                        <li><strong class="text-white">Biometric Security & Replay Protection:</strong> Collaborated on passwordless biometric login using SHA256withRSA asymmetric crypto and two-key enrollment, enforcing Redis-backed 256-bit single-use nonces (60s TTL) for replay protection and brute-force lockouts.</li>
+                        <li><strong class="text-white">Real-Time Fraud Detection:</strong> Architected a low-latency streaming pipeline with Apache Flink, Apache Kafka, and ELK Stack for real-time transaction anomaly detection.</li>
+                        <li><strong class="text-white">OCR eKYC Pipeline:</strong> Fine-tuned and trained lightweight local OCR models for automated Bangladesh National ID eKYC onboarding.</li>
+                    </ul>
+                </div>
+
+                <!-- Dohatec New Media -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Software Engineer</h3>
+                            <p class="text-brand-400 font-mono text-sm">Dohatec New Media</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono border border-slate-700 self-start">2023 – Jan 2026</span>
+                    </div>
+                    <ul class="space-y-3 text-sm text-slate-300 list-disc pl-5">
+                        <li><strong class="text-white">e-PMIS Government Project:</strong> Developed Spring Boot microservices with layered architecture, JPA repositories, DTOs, and CQRS pattern for read/write separation.</li>
+                        <li><strong class="text-white">Auth & Caching:</strong> Configured CORS, stateless JWT authentication, Redis token blacklisting/refreshing, and external API response caching.</li>
+                        <li><strong class="text-white">Enterprise Tools:</strong> Utilized HashiCorp Vault for secrets, RabbitMQ for async messaging, ELK Stack for centralized logging, and MongoDB for audit logs. Optimized Hibernate N+1 queries.</li>
+                        <li><strong class="text-white">AI Chatbot:</strong> Contributed to a Flask-based offline chatbot microservice using Hugging Face BERT embeddings and vector similarity search.</li>
+                    </ul>
+                </div>
+
+                <!-- Research Assistant -->
+                <div class="glass-card p-6 sm:p-8 rounded-3xl border border-slate-800 relative">
+                    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white">Research Assistant</h3>
+                            <p class="text-brand-400 font-mono text-sm">Data Mining Research Group – University of Dhaka</p>
+                        </div>
+                        <span class="px-3 py-1 rounded-full bg-slate-800 text-slate-300 text-xs font-mono border border-slate-700 self-start">2022 – 2023</span>
+                    </div>
+                    <p class="text-sm text-slate-300">Managed research materials, conducted extensive literature reviews, and collaborated on hypothesis formulation for data mining algorithms.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Additional Projects Showcase Grid -->
+    <section id="all-projects" class="py-20 bg-dark-900/50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Portfolio Showcase</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Other Notable Projects</h2>
+                <p class="text-slate-400 mt-2 text-sm">Full-stack web apps, Android emergency systems, and algorithmic tools.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Lost & Found -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-brand-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-brand-500/10 text-brand-400 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-box-archive"></i>
+                            </span>
+                            <span class="text-xs font-mono text-emerald-400 bg-emerald-500/10 px-2.5 py-1 rounded-lg">Live Demo</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">Lost & Found Website</h3>
+                        <p class="text-sm text-slate-300 mb-4 leading-relaxed">Full-stack web application built with React frontend, Spring Boot backend, and PostgreSQL (Neon Cloud DB). Features GitHub Actions CI/CD deployed on Render and Netlify.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">React</span>
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Spring Boot</span>
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">PostgreSQL</span>
+                        </div>
+                        <button onclick="copyToClipboard('https://github.com/zulker01/lost-and-found', 'Lost & Found link copied!')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-mono font-medium transition flex items-center justify-center gap-2 border border-slate-800">
+                            <i class="fa-solid fa-copy text-brand-400"></i> Copy CV Project Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- SAVE ME! Android App -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-brand-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-rose-500/10 text-rose-400 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-triangle-exclamation"></i>
+                            </span>
+                            <span class="text-xs font-mono text-rose-400 bg-rose-500/10 px-2.5 py-1 rounded-lg">Android</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">SAVE ME! Emergency App</h3>
+                        <p class="text-sm text-slate-300 mb-4 leading-relaxed">Java-based Android emergency application triggered via Google Voice commands to instantly message the user's current GPS location and call pre-saved emergency contacts.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Java</span>
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Android SDK</span>
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Voice APIs</span>
+                        </div>
+                        <button onclick="copyToClipboard('https://github.com/zulker01/save-me-app', 'SAVE ME! link copied!')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-mono font-medium transition flex items-center justify-center gap-2 border border-slate-800">
+                            <i class="fa-solid fa-copy text-brand-400"></i> Copy CV Project Link
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Dictionary -->
+                <div class="glass-card p-6 rounded-3xl border border-slate-800 flex flex-col justify-between hover:border-brand-500/50 transition">
+                    <div>
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="w-10 h-10 rounded-xl bg-indigo-500/10 text-indigo-400 flex items-center justify-center font-bold text-lg">
+                                <i class="fa-solid fa-book-bookmark"></i>
+                            </span>
+                            <span class="text-xs font-mono text-indigo-400 bg-indigo-500/10 px-2.5 py-1 rounded-lg">Algorithm</span>
+                        </div>
+                        <h3 class="text-lg font-bold text-white mb-2">English-to-Bangla Dictionary</h3>
+                        <p class="text-sm text-slate-300 mb-4 leading-relaxed">High-performance English-to-Bangla dictionary engine optimized using perfect hashing algorithms for instantaneous O(1) word lookup and minimal memory footprint.</p>
+                    </div>
+                    <div>
+                        <div class="flex flex-wrap gap-1.5 mb-6 text-xs font-mono text-slate-400">
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">C++ / Java</span>
+                            <span class="bg-slate-900 px-2 py-0.5 rounded border border-slate-800">Perfect Hashing</span>
+                        </div>
+                        <button onclick="copyToClipboard('https://github.com/zulker01/dictionary', 'Dictionary link copied!')" class="w-full py-2.5 rounded-xl bg-slate-900 hover:bg-slate-800 text-slate-200 text-xs font-mono font-medium transition flex items-center justify-center gap-2 border border-slate-800">
+                            <i class="fa-solid fa-copy text-brand-400"></i> Copy CV Project Link
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Skills Section -->
+    <section id="skills" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <span class="text-brand-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Technical Expertise</span>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white mt-4">Skills & Technologies</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="glass-card p-6 rounded-3xl border border-slate-800">
+                    <h3 class="font-bold text-white text-base mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-code text-brand-400"></i> Languages & Frameworks
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Spring Boot</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Python</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">FastAPI</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Django / Flask</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Java</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">C / C++</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Angular</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border border-slate-800">
+                    <h3 class="font-bold text-white text-base mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-database text-brand-400"></i> Databases & Caching
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Oracle DB</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">MySQL / PostgreSQL</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">SQLite (WAL/FTS5)</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">MongoDB</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Redis</span>
+                    </div>
+                </div>
+
+                <div class="glass-card p-6 rounded-3xl border border-slate-800">
+                    <h3 class="font-bold text-white text-base mb-4 flex items-center gap-2">
+                        <i class="fa-solid fa-network-wired text-brand-400"></i> Messaging & Cloud
+                    </h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Apache Kafka</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Apache Flink</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">RabbitMQ</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Cloudflare Workers</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">Docker & Git CI/CD</span>
+                        <span class="px-3 py-1.5 rounded-xl bg-slate-900 border border-slate-800 text-xs text-slate-200 font-mono">ELK Stack</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CV Quick Links Section -->
+    <section id="cv-links" class="py-20 bg-dark-900/50 border-t border-slate-800/60">
+        <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center mb-12">
+                <span class="text-brand-400 font-mono text-xs uppercase tracking-widest px-3 py-1 rounded-full bg-brand-500/10 border border-brand-500/20">Ready-to-Use for Resume</span>
+                <h2 class="text-3xl font-extrabold text-white mt-4">Dedicated Star Project Links for CV</h2>
+                <p class="text-slate-400 mt-2 text-sm">Click any button below to instantly copy the exact formatted project link for your CV or application submissions.</p>
+            </div>
+
+            <div class="space-y-4">
+                <div class="glass-card p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-800">
+                    <div>
+                        <h4 class="font-bold text-white text-base">🛡️ Drive Hub — Multi-Drive Search & Sync Engine</h4>
+                        <p class="text-xs text-slate-400 font-mono mt-1">https://github.com/zulker01/drive-hub</p>
+                    </div>
+                    <button onclick="copyToClipboard('https://github.com/zulker01/drive-hub', 'Drive Hub CV link copied!')" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-mono font-medium transition flex items-center justify-center gap-2 shrink-0">
+                        <i class="fa-solid fa-copy"></i> Copy Link
+                    </button>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-800">
+                    <div>
+                        <h4 class="font-bold text-white text-base">📝 JotBot — Serverless AI Note Assistant</h4>
+                        <p class="text-xs text-slate-400 font-mono mt-1">https://github.com/zulker01/jotbot</p>
+                    </div>
+                    <button onclick="copyToClipboard('https://github.com/zulker01/jotbot', 'JotBot CV link copied!')" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-mono font-medium transition flex items-center justify-center gap-2 shrink-0">
+                        <i class="fa-solid fa-copy"></i> Copy Link
+                    </button>
+                </div>
+
+                <div class="glass-card p-5 rounded-2xl flex flex-col sm:flex-row sm:items-center justify-between gap-4 border border-slate-800">
+                    <div>
+                        <h4 class="font-bold text-white text-base">📦 Lost & Found Website</h4>
+                        <p class="text-xs text-slate-400 font-mono mt-1">https://github.com/zulker01/lost-and-found</p>
+                    </div>
+                    <button onclick="copyToClipboard('https://github.com/zulker01/lost-and-found', 'Lost & Found CV link copied!')" class="px-4 py-2 rounded-xl bg-brand-600 hover:bg-brand-500 text-white text-xs font-mono font-medium transition flex items-center justify-center gap-2 shrink-0">
+                        <i class="fa-solid fa-copy"></i> Copy Link
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-12 border-t border-slate-800 text-center text-sm text-slate-500">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <p>© 2026 Zulker Nayeen. Engineered with precision & high availability in Dhaka, Bangladesh.</p>
+            <div class="flex justify-center gap-6 mt-4">
+                <a href="mailto:zulker729@gmail.com" class="hover:text-slate-300 transition">zulker729@gmail.com</a>
+                <a href="https://github.com/zulker01" target="_blank" class="hover:text-slate-300 transition">GitHub</a>
+                <a href="https://linkedin.com/in/zulker-nain" target="_blank" class="hover:text-slate-300 transition">LinkedIn</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Interactive Scripts -->
+    <script>
+        function copyToClipboard(text, message) {
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+                navigator.clipboard.writeText(text).then(() => {
+                    showToast(message);
+                }).catch(() => {
+                    fallbackCopy(text, message);
+                });
+            } else {
+                fallbackCopy(text, message);
+            }
+        }
+
+        function fallbackCopy(text, message) {
+            const textarea = document.createElement("textarea");
+            textarea.value = text;
+            textarea.style.position = "fixed";  // Avoid scrolling to bottom
+            document.body.appendChild(textarea);
+            textarea.focus();
+            textarea.select();
+            try {
+                document.execCommand('copy');
+                showToast(message);
+            } catch (err) {
+                console.error('Failed to copy', err);
+            }
+            document.body.removeChild(textarea);
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            const toastMsg = document.getElementById('toast-message');
+            toastMsg.textContent = message;
+            toast.classList.remove('translate-y-20', 'opacity-0');
+            toast.classList.add('translate-y-0', 'opacity-100');
+            setTimeout(() => {
+                toast.classList.remove('translate-y-0', 'opacity-100');
+                toast.classList.add('translate-y-20', 'opacity-0');
+            }, 3000);
+        }
+
+        function switchTab(project, tabName) {
+            if (project === 'drive') {
+                ['sec', 'sync', 'air'].forEach(t => {
+                    const el = document.getElementById('tab-drive-' + t);
+                    const btn = document.getElementById('btn-drive-' + t);
+                    if (t === tabName) {
+                        el.classList.remove('hidden');
+                        btn.className = "px-5 py-3 font-semibold text-brand-400 border-b-2 border-brand-500 bg-dark-950 transition";
+                    } else {
+                        el.classList.add('hidden');
+                        btn.className = "px-5 py-3 font-medium text-slate-400 hover:text-slate-200 transition";
+                    }
+                });
+            }
+        }
+    </script>
 </body>
 </html>
